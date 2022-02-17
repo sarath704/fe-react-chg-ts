@@ -1,3 +1,6 @@
+export type InputTypes = 'text' | 'select' | 'checkbox';
+export type DecisionTypes = 'accepted' | 'declined';
+
 export interface LenderGetResponse {
   name: string;
   fields: Array<
@@ -18,11 +21,24 @@ export interface LenderGetResponseExtended {
 
 export interface LenderFields {
   name: string;
-  type: string;
+  type: InputTypes;
   required: boolean;
+  label?: string;
   options?: Array<string>;
 }
 
 export interface LenderPostResponse {
-  decision: 'accepted' | 'declined';
+  decision: DecisionTypes;
 }
+
+export interface IFormControl {
+  name: string;
+  value: unknown;
+  onChange: (props: any) => void;
+  label: string;
+  error: string | null;
+  options?: Array<string>;
+  checked?: boolean;
+  required?: boolean;
+}
+export type InitValuesTypes = Record<string, string | boolean>;
