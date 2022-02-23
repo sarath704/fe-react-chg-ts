@@ -10,16 +10,16 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 
 import { NextPage } from 'next';
 import { useRouter } from 'next/router';
-import { CHECK_BOX } from './constants/constants';
-import BuildFormComponent from './components/BuildForm';
-import ToasterComponent from './components/ToasterCompoment';
+import { CHECK_BOX } from '../constants/constants';
+import BuildFormComponent from '../components/BuildForm';
+import ToasterComponent from '../components/ToasterCompoment';
 import { Container, Paper, Typography } from '@material-ui/core';
 
 const LenderNamePage: NextPage = () => {
   const router = useRouter();
   const lenderSlug = router.query.lenderName?.toString();
   /* -------------------------------------------------------------------------- */
-  /*                                   Local state                                   */
+  /*                                   Local state                              */
   /* -------------------------------------------------------------------------- */
   const [data, setData] = useState<
     LenderGetResponse | LenderGetResponseExtended

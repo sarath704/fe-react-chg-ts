@@ -1,8 +1,8 @@
 import React from 'react';
 import { LenderFields } from 'lib/types';
-import useForm, { Form } from 'pages/hooks/useForm';
+import useForm, { Form } from '../hooks/useForm';
 import FormControls from './formControls/FormControls';
-import { CHECK_BOX, SELECT, TEXT } from 'pages/constants/constants';
+import { CHECK_BOX, SELECT, TEXT } from '../constants/constants';
 
 interface BuildFormProps {
   formElements: LenderFields[];
@@ -40,8 +40,7 @@ const BuildFormComponent = ({
     validate,
   );
 
-  const handleSubmit = (e: any) => {
-    // e.preventDefault();
+  const handleSubmit = () => {
     if (validate()) {
       submitForm(values);
     }
